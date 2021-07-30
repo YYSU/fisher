@@ -1,25 +1,7 @@
-from flask import Flask
-from helper import is_isbn_or_key
+from app import create_app
 
-app = Flask(__name__)
-app.config.from_object('config')
 
-@app.route('/hello')
-def hello():
-    headers = {
-        'content-type': 'text/plain'
-    }
-    return '<h1> Yo !</h1>', 200, headers
-
-@app.route('/book/search/<q>/<page>')
-def search(q, page):
-    """
-        q : keyword or isbn
-        page
-    :return:
-    """
-    isbn_or_key = is_isbn_or_key(q)
-
+app = create_app()
 
 # 通常在生產環境會使用 nginx + uwsgi，不會直接使用 flask sever
 # https://www.maxlist.xyz/2020/05/06/flask-wsgi-nginx/
