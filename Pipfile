@@ -7,6 +7,10 @@ name = "pypi"
 flask = "*"
 requests = "*"
 wtforms = "*"
+flask-sqlalchemy = "*"
+pycryptodome = "*"
+pymysql = "*"
+cryptography = "*"
 
 [dev-packages]
 
